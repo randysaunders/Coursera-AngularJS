@@ -7,9 +7,12 @@ angular.module('LunchCheck', [])
 LunchCheckController.$inject = ['$scope'];
 
 function LunchCheckController($scope) {
-  $scope.lunchItems = "list comma separated dishes you usually have for lunch ...";
+  $scope.lunchItems = "list comma separated dishes you usually have for lunch";
   $scope.lunchMessage = "";
   $scope.buttonLabel = "Check If Too Much"
+  
+  $scope.textBoxBorder = "";
+  $scope.msgFontColor = "";
   
   $scope.countLunchItems = function () {
     
@@ -30,14 +33,20 @@ function LunchCheckController($scope) {
 	switch(numberItems) {
     case 0:
         $scope.lunchMessage = "Please enter data first";
+		$scope.textBoxBorder = {"border-color" : "red"};
+		$scope.msgFontColor = {"color" : "red"};
 		break;
     case 1:
 	case 2:
 	case 3:
         $scope.lunchMessage = "Enjoy!";
+		$scope.textBoxBorder = {"border-color" : "green"};
+		$scope.msgFontColor = {"color" : "green"};
 		break;
     default:
-        $scope.lunchMessage = "Too Much!!";
+        $scope.lunchMessage = "Too Much!";
+		$scope.textBoxBorder  = {"border-color" : "green"};
+		$scope.msgFontColor = {"color" : "green"};
 }
 
 	
