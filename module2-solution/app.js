@@ -14,7 +14,7 @@
 		
 		toBuyList.buyItem = function (itemIndex) {
 			ShoppingListCheckOffService.buyItem(itemIndex);
-        }
+		}
 	}
 
 	AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
@@ -29,24 +29,14 @@
 		var service = this;
 
 		// List of shopping items
-		var toBuyItems = [{
-				item_name: 'cookies',
-				item_quantity: 10
-			}, {
-				item_name: 'chips',
-				item_quantity: 5
-			}, {
-				item_name: 'bananas',
-				item_quantity: 6
-			}, {
-				item_name: 'milk',
-				item_quantity: 1
-			}, {
-				item_name: 'water',
-				item_quantity: 6
-			}
+		var toBuyItems = [
+			{item_name: 'cookies', item_quantity: 10 },
+			{item_name: 'chips', item_quantity: 5 },
+			{item_name: 'bananas', item_quantity: 6 },
+			{item_name: 'milk', item_quantity: 1 },
+			{item_name: 'water', item_quantity: 6 }
 		];
-
+		
 		// Initially alreadyBoughtItems empty
 		var alreadyBoughtItems = [];
 		
@@ -57,7 +47,7 @@
 			
 			// remove item from toBuyItems
 			toBuyItems.splice(itemIdex, 1);
-        }
+		}
 		
 		service.getToBuyItems = function () {
 			return toBuyItems;
@@ -66,7 +56,6 @@
 		service.getAlreadyBoughtItems = function () {
 			return alreadyBoughtItems;
 		}
-
 	}
 
-	})();
+})();
