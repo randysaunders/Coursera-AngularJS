@@ -1,5 +1,5 @@
 (function () {
-	'use strict';
+'use strict';
 
 	angular.module('ShoppingListCheckOff', [])
 	.controller('ToBuyController', ToBuyController)
@@ -34,7 +34,7 @@
 			{item_name: 'chips', item_quantity: 5 },
 			{item_name: 'bananas', item_quantity: 6 },
 			{item_name: 'milk', item_quantity: 1 },
-			{item_name: 'waters', item_quantity: 6 }
+			{item_name: 'water', item_quantity: 6 }
 		];
 		
 		// Initially alreadyBoughtItems empty
@@ -58,4 +58,4 @@
 		}
 	}
 
-})();
+})()
