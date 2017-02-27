@@ -7,7 +7,7 @@ angular.module('LunchCheck', [])
 LunchCheckController.$inject = ['$scope'];
 
 function LunchCheckController($scope) {
-  $scope.lunchItems = "list comma separated dishes you usually have for lunch";
+  $scope.lunchItems = "";
   $scope.lunchMessage = "";
   $scope.buttonLabel = "Check If Too Much"
   
