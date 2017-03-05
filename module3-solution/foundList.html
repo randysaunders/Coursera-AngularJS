@@ -1,18 +1,18 @@
 <!-- Found List Template -->
 <div>
-<br/>
-<br/>
-<br/>
-<ol>
-  <li ng-repeat="item in found.items">
-    <b>({{item.short_name}}) </b>{{ item.name }} <button ng-click="found.onRemove({index: $index});">Don't want this one!</button>
-	<br>
-	<i>{{ item.description }}</i>
-	<br><br>
-    
-  </li>
-</ol>
-<div class="error" ng-if='found.noItemsFound()'>Nothing found</div>
+	<br/>
+	<br/>
+	<br/>
+	<ol>
+	  <li ng-repeat="item in found.items">
+		<b>({{item.short_name}})</b> {{ item.name }} <button ng-click="found.onRemove({index: $index});">Don't want this one!</button>
+		<br>
+		<i>{{item.description }}</i>
+		<br><br>
+		
+	  </li>
+	</ol>
+	<div class="error" ng-if="found.errorDisplay">Nothing found</div>
 </div>
 
 
