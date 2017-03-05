@@ -5,7 +5,8 @@
 	<br/>
 	<ol>
 	  <li ng-repeat="item in found.items">
-		<b>({{item.short_name}})</b> {{ item.name }} <button ng-click="found.onRemove({index: $index});">Don't want this one!</button>
+		<b>({{item.short_name}}) &nbsp; {{ item.name }} </b>  &nbsp;  &nbsp; 
+		<button ng-click="found.onRemove({index: $index});">Don't want this one!</button>
 		<br>
 		<i>{{item.description }}</i>
 		<br><br>
