@@ -13,7 +13,7 @@
 			scope: {
 				items: '<',
 				onRemove: '&',
-				errorDisplay: '<'
+				nothingFound: '<'
 			},
 			controller: NarrowItDownController,
 			controllerAs: 'found',
@@ -27,14 +27,14 @@
 	function NarrowItDownController(MenuSearchService) {
 		var narrowDown = this;
 		narrowDown.found = [];
-		narrowDown.errorDisplay = false;
+		narrowDown.nothingFound = false;
 
 		narrowDown.search = function () {
 
 			// Verify search term  exists
 			if (narrowDown.searchTerm == null || narrowDown.searchTerm === "") {
 				narrowDown.found = [];
-				narrowDown.errorDisplay = true;
+				narrowDown.nothingFound = true;
 				return;
 			}
 
@@ -43,19 +43,18 @@
 			promise.then(function (response) {
 
 				// narrowDown.found = response;
-
 				if (response.length !== 0) {
-					narrowDown.errorDisplay = false;
+					narrowDown.nothingFound = false;
 					narrowDown.found = response;
 				} else {
-					narrowDown.errorDisplay = true;
+					narrowDown.nothingFound = true;
 					narrowDown.found = [];
 				}
 			})
 
 			.catch (function (error) {
 				console.error("Something went terribly wrong.");
-				narrowDown.errorDisplay = true;
+				narrowDown.nothingFound = true;
 				narrowDown.found = [];
 			});
 		};
