@@ -16,7 +16,9 @@
 		}
 
 		signUpCtrl.validateFavorite = function () {
-
+			
+			signUpCtrl.userProfile.favorite = signUpCtrl.userProfile.favorite.toUpperCase();
+			
 			MenuService.getFavoriteDish(signUpCtrl.userProfile.favorite)
 			.then(function () {
 				signUpCtrl.favoriteValid = true;
