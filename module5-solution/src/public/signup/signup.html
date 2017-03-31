@@ -10,7 +10,7 @@
           required>
 		  <span
             ng-if="(regForm.firstName.$error.required) && regForm.firstName.$touched">
-            First Name is required
+            First Name is required.
           </span>
           <br>
 		  
@@ -19,7 +19,7 @@
           required>
 		  <span
             ng-if="(regForm.lastName.$error.required) && regForm.lastName.$touched">
-            Last Name is required
+            Last Name is required.
           </span>
           <br> 
 
@@ -27,7 +27,7 @@
           ng-model="signUpCtrl.userProfile.email"
           required>
           <span ng-if="regForm.email.$invalid && regForm.email.$touched">
-            Must be a valid email address: handle@domain format
+            Must be a valid email address: handle@domain format.
           </span>
           <br>
 
@@ -48,7 +48,7 @@
             Favorite dish is required.
           </span>
 		  <span ng-if="!signUpCtrl.favoriteValid && regForm.favDish.$touched && !(regForm.favDish.$error.required)">
-            Menu item "{{signUpCtrl.userProfile.favorite}}" does not exist.  Visit <a class="user_registration" ui-sref="public.menu" target="_blank">our menu</a> to view the current menu items
+            Menu item "{{signUpCtrl.userProfile.favorite}}" does not exist.  Visit <a class="user_registration" ui-sref="public.menu" target="_blank">our menu</a> to view the current menu items.
           </span>
           <br>
     </div>			  
