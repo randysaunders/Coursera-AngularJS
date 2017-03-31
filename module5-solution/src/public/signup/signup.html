@@ -1,0 +1,67 @@
+<div class="container">
+  <h2 class="text-center">Sign Up</h2>
+
+  <p class="text-center">Complete this form to sign up for our newsletter!</p><br>
+  
+  <form name='regForm' novalidate>
+  <div class="form-group">  
+		<input class="form-control" type="text" name="firstName" placeholder="First Name"
+          ng-model="signUpCtrl.userProfile.firstName"
+          required>
+		  <span
+            ng-if="(regForm.firstName.$error.required) && regForm.firstName.$touched">
+            First Name is required
+          </span>
+          <br>
+		  
+		 <input class="form-control" type="text" name="lastName" placeholder="Last Name"
+          ng-model="signUpCtrl.userProfile.lastName"
+          required>
+		  <span
+            ng-if="(regForm.lastName.$error.required) && regForm.lastName.$touched">
+            Last Name is required
+          </span>
+          <br> 
+
+        <input class="form-control" type="email" name="email" placeholder="Email" 
+          ng-model="signUpCtrl.userProfile.email"
+          required>
+          <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+            Must be a valid email address: handle@domain format
+          </span>
+          <br>
+
+        <input class="form-control" type="text" name="phone" placeholder="Phone Number (###-###-####)"
+          ng-model="signUpCtrl.userProfile.phone"
+		  required
+          pattern="(\d{3})-(\d{3})-(\d{4})">
+          <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+          </span>
+          <br>
+
+		<input class="form-control" type="text" name="favDish" placeholder="Favorite dish"
+          ng-model="signUpCtrl.userProfile.favorite"
+		  ng-blur="signUpCtrl.validateFavorite()"
+		  required>
+          <span ng-if="regForm.favDish.$error.required && regForm.favDish.$touched">
+            Favorite dish is required
+          </span>
+		  <span ng-if="!signUpCtrl.validFavorite && regForm.favDish.$touched">
+            Menu item "{{signUpCtrl.userProfile.favorite}}" does not exist. Visit <a class="user_registration" ui-sref="public.menu" target="_blank">our menu</a> to view the current menu items
+          </span>
+          <br>
+    </div>			  
+    
+    <button type="submit"
+	  class="btn btn-default"
+	  ng-disabled="regForm.$invalid"
+      ng-click="signUpCtrl.submit()">
+	  Submit
+	</button>
+		
+ </form>
+
+<div ng-if="signUpCtrl.registered">Your information has been saved.  You are now registered for our newsletter.</div>
+  
+</div>

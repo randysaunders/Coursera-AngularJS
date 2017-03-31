@@ -1,0 +1,14 @@
+.user_registration:link {
+    color: yellow;
+    text-decoration: none;
+}
+.user_registration:visited{
+   color: yellow;
+   text-decoration: none;
+}
+.user_registration:hover{
+   color: yellow;
+   text-decoration: underline;
+}
+.font-bold {
+font-weight: bold;}

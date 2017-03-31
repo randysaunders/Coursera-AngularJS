@@ -1,0 +1,22 @@
+<div class="container">
+  <h2 class="text-center">My Info</h2>
+ 
+  <div ng-if="myInfoCtrl.registered"> 
+    <div>
+	   <p class="text-center">This is your registration information.</p><br>
+  
+		<span class="font-bold">First name: </span> {{myInfoCtrl.userProfile.firstName}} <br>
+		<span class="font-bold">Last name: </span> {{myInfoCtrl.userProfile.lastName}} <br>
+		<span class="font-bold">Email: </span> {{myInfoCtrl.userProfile.email}} <br>
+		<span class="font-bold">Phone number: </span> {{myInfoCtrl.userProfile.phone}} <br><br>
+		<span class="font-bold">Favorite Dish: <span>
+		<p></p>
+		<menu-item
+		  menu-item="myInfoCtrl.favoriteDishDetails">
+		</menu-item>
+	</div>
+ </div>
+
+ <div ng-if="!myInfoCtrl.registered">Not Signed Up Yet. <a class="user_registration" ui-sref="public.signup">Sign up Now!</a></div>
+
+</div>
