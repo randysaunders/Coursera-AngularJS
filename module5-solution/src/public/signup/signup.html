@@ -43,12 +43,12 @@
 		<input class="form-control" type="text" name="favDish" placeholder="Favorite dish"
           ng-model="signUpCtrl.userProfile.favorite"
 		  ng-blur="signUpCtrl.validateFavorite()"
-		  required>
-          <span ng-if="regForm.favDish.$error.required && regForm.favDish.$touched">
-            Favorite dish is required
+		  required>	  
+		  <span ng-if="regForm.favDish.$error.required && regForm.favDish.$touched">
+            Favorite dish is required.
           </span>
-		  <span ng-if="!signUpCtrl.validFavorite && regForm.favDish.$touched">
-            Menu item "{{signUpCtrl.userProfile.favorite}}" does not exist. Visit <a class="user_registration" ui-sref="public.menu" target="_blank">our menu</a> to view the current menu items
+		  <span ng-if="!signUpCtrl.favoriteValid && regForm.favDish.$touched && !(regForm.favDish.$error.required)">
+            Menu item "{{signUpCtrl.userProfile.favorite}}" does not exist.  Visit <a class="user_registration" ui-sref="public.menu" target="_blank">our menu</a> to view the current menu items
           </span>
           <br>
     </div>			  

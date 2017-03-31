@@ -13,20 +13,18 @@
 
 			RegistrationService.setUserProfile(signUpCtrl.userProfile);
 			signUpCtrl.registered = true;
-
 		}
 
 		signUpCtrl.validateFavorite = function () {
 
 			MenuService.getFavoriteDish(signUpCtrl.userProfile.favorite)
 			.then(function () {
-				signUpCtrl.validFavorite = true;
+				signUpCtrl.favoriteValid = true;
 			})
 			.catch (function () {
-				signUpCtrl.validFavorite = false;
+				signUpCtrl.favoriteValid = false;
 			});
 		}
-
 	};
 
 })();
