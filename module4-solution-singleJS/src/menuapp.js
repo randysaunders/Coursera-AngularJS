@@ -19,7 +19,7 @@
 			items: '<'
 		}
 	});
-
+	//
 	// 'categories' is injected through state's resolve
 	CategoriesController.$inject = ['categories']
 	function CategoriesController(categories) {
