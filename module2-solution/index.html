@@ -27,7 +27,7 @@
 <body ng-app='ShoppingListCheckOff'>
    
    <div class="container">
-      <h1>Shopping List Check Off</h1>
+      <h1>My Shopping List Check Off</h1>
       <div class="row">
          
 		 <!-- To Buy List -->
@@ -38,7 +38,7 @@
                   <button ng-click="ToBuy.buyItem($index);" class="btn btn-default" > <span class="glyphicon glyphicon-ok"></span> Bought</button>
                </li>
             </ul>
-            <div ng-if="!ToBuy.items.length" class="emptyMessage">Everything is bought!</div>
+            <div ng-if="!ToBuy.items.length" class="emptyMessage">Finished Shopping</div>
          </div>
 
          <!-- Already Bought List -->
